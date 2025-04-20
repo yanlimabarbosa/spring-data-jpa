@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch.model;
 
+import br.com.alura.screenmatch.service.ConsultaChatGpt;
 import com.fasterxml.jackson.annotation.JsonAlias;
 
 import java.util.OptionalDouble;
@@ -20,7 +21,7 @@ public class Serie {
         this.genero = Categoria.fromString(dadosSerie.genero().split(",")[0].trim());
         this.atores = dadosSerie.atores();
         this.poster = dadosSerie.poster();
-        this.sinpose = dadosSerie.sinpose();
+        this.sinpose = ConsultaChatGpt.obterTraducao(dadosSerie.sinpose()).trim();
     }
 
     public Integer getTotalTemporadas() {

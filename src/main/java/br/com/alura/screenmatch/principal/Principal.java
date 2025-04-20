@@ -62,7 +62,6 @@ public class Principal {
     private void buscarSerieWeb() {
         DadosSerie dados = getDadosSerie();
         dadosSeries.add(dados);
-        System.out.println(dados);
     }
 
     private void buscarEpisodioPorSerie(){
@@ -74,7 +73,6 @@ public class Principal {
             DadosTemporada dadosTemporada = conversor.obterDados(json, DadosTemporada.class);
             temporadas.add(dadosTemporada);
         }
-        temporadas.forEach(System.out::println);
     }
 
     private void listarSeriesBuscadas(){
