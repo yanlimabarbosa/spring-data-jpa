@@ -81,10 +81,12 @@ public class Principal {
     }
 
     private void listarSeriesBuscadas(){
-        List<Serie> series;
-        series = dadosSeries.stream()
-                .map(Serie::new)
-                .toList();
+//        List<Serie> series;
+//        series = dadosSeries.stream()
+//                .map(Serie::new)
+//                .toList();
+
+        List<Serie> series = repositorio.findAll();
 
         series.stream()
                 .sorted(Comparator.comparing(Serie::getGenero))
